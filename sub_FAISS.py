@@ -12,6 +12,7 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-b
 
 #embeddings = HuggingFaceEmbeddings(model=sentence_transformers)
 
+#pip install faiss-cpu
 import faiss
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS

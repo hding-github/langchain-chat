@@ -41,13 +41,14 @@ def user_input(user_question, vector_store, chat_chain):
         {"input_documents":docs, "question": user_question}
         , return_only_outputs=True)
 
-    print(response)
+    print("***************************")
+    print(response["output_text"])
     #st.write("Reply: ", response["output_text"])
-    return (response["output_text"])
+    return (response)
 
 chat_chain = get_conversational_chain()
 vector_store = my_faiss.load_faiss()
 
 response = user_input("What is the purpose", vector_store=vector_store, chat_chain=chat_chain)
-print(response)
+print(response["output_text"])
 print("complete")
