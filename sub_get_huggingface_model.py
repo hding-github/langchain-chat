@@ -1,7 +1,7 @@
 # https://python.langchain.com/v0.2/docs/integrations/platforms/huggingface/
 # pip install langchain-huggingface
 
-
+import streamlit as st
 import os, getpass
 
 from langchain_huggingface import ChatHuggingFace
@@ -12,7 +12,8 @@ from langchain_core.prompts import PromptTemplate
 
 def get_chat_model():
     if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
-        os.environ["HUGGINGFACEHUB_API_TOKEN"] = getpass.getpass("Enter your HuggingFace token: ")
+        #os.environ["HUGGINGFACEHUB_API_TOKEN"] = getpass.getpass("Enter your HuggingFace token: ")
+        st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
     llm = HuggingFaceEndpoint(
         repo_id="HuggingFaceH4/zephyr-7b-beta",
