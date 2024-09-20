@@ -129,6 +129,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+hd_folder/
 
 # Spyder project settings
 .spyderproject
