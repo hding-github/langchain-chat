@@ -17,7 +17,7 @@ def main():
 
     #user_question = st.text_input("**Ask a Question from the PDF Files**", key="question_input", style="font-size: 18px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;")  # Styled text input
 
-    user_question = st.text_input("**Ask a Question from the PDF Files**", key="question_input")  # Styled text input
+    user_question = st.text_input("**Ask questions for Info from PDF Files**", key="question_input")  # Styled text input
 
 
     if user_question:

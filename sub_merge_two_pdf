@@ -1,0 +1,27 @@
+import PyPDF2
+strPath = "./folder_merge_pdf_files/"
+#pdfs = ['Demo_02.pdf', 'face_mask_analysis_results_07.pdf', 'file3.pdf', 'file4.pdf']
+pdfs = ['Demo_02.pdf', 'face_mask_analysis_results_07.pdf']
+
+listPDFs = list()
+for tFile in pdfs:
+    strURL = strPath + tFile
+    listPDFs.append(strURL)
+
+strURL_Output = strPath + "results.pdf"
+def merge_pdfs(input_pdfs, output_pdf):
+    merger = PyPDF2.PdfMerger()
+    try:
+        for pdf in input_pdfs:
+            merger.append(pdf)
+
+        with open(output_pdf, 'wb') as merged_pdf:
+            merger.write(merged_pdf)
+
+        print(f'Merged PDFs successfully. Output saved to: {output_pdf}')
+
+    except Exception as e:
+        print(f'Error merging PDFs: {e}')
+
+merge_pdfs(listPDFs, strURL_Output)
+print("complete")
